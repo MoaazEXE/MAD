@@ -7,43 +7,43 @@
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.example.myapplication.ui.profile.ProfileFragment"
+        android:name="com.example.bytelift.ui.profile.ProfileFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:name="com.example.bytelift.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_page1"
-        android:name="com.example.myapplication.ui.page1.Page1Fragment"
+        android:name="com.example.bytelift.ui.page1.Page1Fragment"
         android:label="@string/menu_page1"
         tools:layout="@layout/fragment_page1" />
 
     <fragment
         android:id="@+id/nav_page2"
-        android:name="com.example.myapplication.ui.page2.Page2Fragment"
+        android:name="com.example.bytelift.ui.page2.Page2Fragment"
         android:label="@string/menu_page2"
         tools:layout="@layout/fragment_page2" />
 
     <fragment
         android:id="@+id/nav_page3"
-        android:name="com.example.myapplication.ui.page3.Page3Fragment"
+        android:name="com.example.bytelift.ui.page3.Page3Fragment"
         android:label="@string/menu_page3"
         tools:layout="@layout/fragment_page3" />
 
     <fragment
         android:id="@+id/nav_page4"
-        android:name="com.example.myapplication.ui.page4.Page4Fragment"
+        android:name="com.example.bytelift.ui.page4.Page4Fragment"
         android:label="@string/menu_page4"
         tools:layout="@layout/fragment_page4" />
 
     <fragment
         android:id="@+id/nav_page5"
-        android:name="com.example.myapplication.ui.page5.Page5Fragment"
+        android:name="com.example.bytelift.ui.page5.Page5Fragment"
         android:label="@string/menu_page5"
         tools:layout="@layout/fragment_page5" />
 </navigation>

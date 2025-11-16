@@ -1,13 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.example.myapplication"
+    namespace = "com.example.bytelift"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.myapplication"
+        applicationId = "com.example.bytelift"
         minSdk = 25
         targetSdk = 36
         versionCode = 1
@@ -36,6 +38,9 @@ android {
 
 dependencies {
 
+
+    implementation(platform("com.google.firebase:firebase-bom:34.5.0"))
+    implementation("com.google.firebase:firebase-analytics")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
