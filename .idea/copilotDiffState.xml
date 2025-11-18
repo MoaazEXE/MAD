@@ -100,15 +100,6 @@
             </PendingDiffInfo>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_page1.xml">
-          <value>
-            <PendingDiffInfo>
-              <option name="filePath" value="$PROJECT_DIR$/app/src/main/res/layout/fragment_page1.xml" />
-              <option name="originalContent" value="&#10;" />
-              <option name="updatedContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&#10;    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;match_parent&quot;&#10;    android:background=&quot;?attr/colorSurface&quot;&#10;    tools:context=&quot;.ui.page1.Page1Fragment&quot;&gt;&#10;&#10;&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;" />
-            </PendingDiffInfo>
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_page2.xml">
           <value>
             <PendingDiffInfo>
@@ -124,15 +115,6 @@
               <option name="filePath" value="$PROJECT_DIR$/app/src/main/res/layout/fragment_page3.xml" />
               <option name="originalContent" value="&#10;" />
               <option name="updatedContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&#10;    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;match_parent&quot;&#10;    android:background=&quot;?attr/colorSurface&quot;&#10;    tools:context=&quot;.ui.page3.Page3Fragment&quot;&gt;&#10;&#10;&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;" />
-            </PendingDiffInfo>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_page4.xml">
-          <value>
-            <PendingDiffInfo>
-              <option name="filePath" value="$PROJECT_DIR$/app/src/main/res/layout/fragment_page4.xml" />
-              <option name="originalContent" value="&#10;" />
-              <option name="updatedContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&#10;    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;match_parent&quot;&#10;    android:background=&quot;?attr/colorSurface&quot;&#10;    tools:context=&quot;.ui.page4.Page4Fragment&quot;&gt;&#10;&#10;&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;" />
             </PendingDiffInfo>
           </value>
         </entry>
@@ -154,30 +136,12 @@
             </PendingDiffInfo>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml">
-          <value>
-            <PendingDiffInfo>
-              <option name="filePath" value="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" />
-              <option name="originalContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;navigation xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&#10;    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&#10;    android:id=&quot;@+id/mobile_navigation&quot;&#10;    app:startDestination=&quot;@+id/nav_home&quot;&gt;&#10;&#10;    &lt;fragment&#10;        android:id=&quot;@+id/nav_home&quot;&#10;        android:name=&quot;com.example.myapplication.ui.home.HomeFragment&quot;&#10;        android:label=&quot;@string/menu_home&quot;&#10;        tools:layout=&quot;@layout/fragment_home&quot; /&gt;&#10;&#10;    &lt;fragment&#10;        android:id=&quot;@+id/nav_gallery&quot;&#10;        android:name=&quot;com.example.myapplication.ui.gallery.GalleryFragment&quot;&#10;        android:label=&quot;@string/menu_gallery&quot;&#10;        tools:layout=&quot;@layout/fragment_gallery&quot; /&gt;&#10;&#10;    &lt;fragment&#10;        android:id=&quot;@+id/nav_slideshow&quot;&#10;        android:name=&quot;com.example.myapplication.ui.slideshow.SlideshowFragment&quot;&#10;        android:label=&quot;@string/menu_slideshow&quot;&#10;        tools:layout=&quot;@layout/fragment_slideshow&quot; /&gt;&#10;&lt;/navigation&gt;" />
-              <option name="updatedContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;navigation xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&#10;    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&#10;    android:id=&quot;@+id/mobile_navigation&quot;&#10;    app:startDestination=&quot;@+id/nav_home&quot;&gt;&#10;&#10;    &lt;fragment&#10;        android:id=&quot;@+id/nav_profile&quot;&#10;        android:name=&quot;com.example.myapplication.ui.profile.ProfileFragment&quot;&#10;        android:label=&quot;@string/menu_profile&quot;&#10;        tools:layout=&quot;@layout/fragment_profile&quot; /&gt;&#10;&#10;    &lt;fragment&#10;        android:id=&quot;@+id/nav_home&quot;&#10;        android:name=&quot;com.example.myapplication.ui.home.HomeFragment&quot;&#10;        android:label=&quot;@string/menu_home&quot;&#10;        tools:layout=&quot;@layout/fragment_home&quot; /&gt;&#10;&#10;    &lt;fragment&#10;        android:id=&quot;@+id/nav_page1&quot;&#10;        android:name=&quot;com.example.myapplication.ui.page1.Page1Fragment&quot;&#10;        android:label=&quot;@string/menu_page1&quot;&#10;        tools:layout=&quot;@layout/fragment_page1&quot; /&gt;&#10;&#10;    &lt;fragment&#10;        android:id=&quot;@+id/nav_page2&quot;&#10;        android:name=&quot;com.example.myapplication.ui.page2.Page2Fragment&quot;&#10;        android:label=&quot;@string/menu_page2&quot;&#10;        tools:layout=&quot;@layout/fragment_page2&quot; /&gt;&#10;&#10;    &lt;fragment&#10;        android:id=&quot;@+id/nav_page3&quot;&#10;        android:name=&quot;com.example.myapplication.ui.page3.Page3Fragment&quot;&#10;        android:label=&quot;@string/menu_page3&quot;&#10;        tools:layout=&quot;@layout/fragment_page3&quot; /&gt;&#10;&#10;    &lt;fragment&#10;        android:id=&quot;@+id/nav_page4&quot;&#10;        android:name=&quot;com.example.myapplication.ui.page4.Page4Fragment&quot;&#10;        android:label=&quot;@string/menu_page4&quot;&#10;        tools:layout=&quot;@layout/fragment_page4&quot; /&gt;&#10;&#10;    &lt;fragment&#10;        android:id=&quot;@+id/nav_page5&quot;&#10;        android:name=&quot;com.example.myapplication.ui.page5.Page5Fragment&quot;&#10;        android:label=&quot;@string/menu_page5&quot;&#10;        tools:layout=&quot;@layout/fragment_page5&quot; /&gt;&#10;&lt;/navigation&gt;" />
-            </PendingDiffInfo>
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/values-night/colors.xml">
           <value>
             <PendingDiffInfo>
               <option name="filePath" value="$PROJECT_DIR$/app/src/main/res/values-night/colors.xml" />
-              <option name="originalContent" value="&#10;&#10;" />
+              <option name="originalContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;resources&gt;&#10;    &lt;color name=&quot;side_nav_start&quot;&gt;#388E3C&lt;/color&gt;&#10;    &lt;color name=&quot;side_nav_center&quot;&gt;#2E7D32&lt;/color&gt;&#10;    &lt;color name=&quot;side_nav_end&quot;&gt;#1B5E20&lt;/color&gt;&#10;&lt;/resources&gt;" />
               <option name="updatedContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;resources&gt;&#10;    &lt;color name=&quot;side_nav_start&quot;&gt;#388E3C&lt;/color&gt;&#10;    &lt;color name=&quot;side_nav_center&quot;&gt;#2E7D32&lt;/color&gt;&#10;    &lt;color name=&quot;side_nav_end&quot;&gt;#1B5E20&lt;/color&gt;&#10;&lt;/resources&gt;" />
-            </PendingDiffInfo>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml">
-          <value>
-            <PendingDiffInfo>
-              <option name="filePath" value="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" />
-              <option name="originalContent" value="&lt;resources xmlns:tools=&quot;http://schemas.android.com/tools&quot;&gt;&#10;    &lt;!-- Base application theme. --&gt;&#10;    &lt;style name=&quot;Theme.MyApplication&quot; parent=&quot;Theme.MaterialComponents.DayNight.DarkActionBar&quot;&gt;&#10;        &lt;!-- Primary brand color. --&gt;&#10;        &lt;item name=&quot;colorPrimary&quot;&gt;@color/purple_200&lt;/item&gt;&#10;        &lt;item name=&quot;colorPrimaryVariant&quot;&gt;@color/purple_700&lt;/item&gt;&#10;        &lt;item name=&quot;colorOnPrimary&quot;&gt;@color/black&lt;/item&gt;&#10;        &lt;!-- Secondary brand color. --&gt;&#10;        &lt;item name=&quot;colorSecondary&quot;&gt;@color/teal_200&lt;/item&gt;&#10;        &lt;item name=&quot;colorSecondaryVariant&quot;&gt;@color/teal_200&lt;/item&gt;&#10;        &lt;item name=&quot;colorOnSecondary&quot;&gt;@color/black&lt;/item&gt;&#10;        &lt;!-- Status bar color. --&gt;&#10;        &lt;item name=&quot;android:statusBarColor&quot;&gt;?attr/colorPrimaryVariant&lt;/item&gt;&#10;        &lt;!-- Customize your theme here. --&gt;&#10;    &lt;/style&gt;&#10;&lt;/resources&gt;" />
-              <option name="updatedContent" value="&lt;resources&gt;&#10;    &lt;!-- Base application theme. --&gt;&#10;    &lt;style name=&quot;Theme.MyApplication&quot; parent=&quot;Theme.MaterialComponents.DayNight.DarkActionBar&quot;&gt;&#10;        &lt;!-- Primary brand color. --&gt;&#10;        &lt;item name=&quot;colorPrimary&quot;&gt;@color/dark_green_200&lt;/item&gt;&#10;        &lt;item name=&quot;colorPrimaryVariant&quot;&gt;@color/dark_green_700&lt;/item&gt;&#10;        &lt;item name=&quot;colorOnPrimary&quot;&gt;@color/black&lt;/item&gt;&#10;        &lt;!-- Secondary brand color. --&gt;&#10;        &lt;item name=&quot;colorSecondary&quot;&gt;@color/light_green_200&lt;/item&gt;&#10;        &lt;item name=&quot;colorSecondaryVariant&quot;&gt;@color/light_green_200&lt;/item&gt;&#10;        &lt;item name=&quot;colorOnSecondary&quot;&gt;@color/black&lt;/item&gt;&#10;        &lt;!-- Background and surface colors for dark mode --&gt;&#10;        &lt;item name=&quot;android:windowBackground&quot;&gt;@color/dark_green_700&lt;/item&gt;&#10;        &lt;item name=&quot;android:colorBackground&quot;&gt;@color/dark_green_700&lt;/item&gt;&#10;        &lt;item name=&quot;colorSurface&quot;&gt;@color/dark_green_700&lt;/item&gt;&#10;        &lt;item name=&quot;colorOnSurface&quot;&gt;@color/white&lt;/item&gt;&#10;        &lt;!-- Status bar color. --&gt;&#10;        &lt;item name=&quot;android:statusBarColor&quot;&gt;?attr/colorPrimaryVariant&lt;/item&gt;&#10;    &lt;/style&gt;&#10;&lt;/resources&gt;" />
             </PendingDiffInfo>
           </value>
         </entry>
