@@ -1,4 +1,4 @@
-package com.example.bytelift.ui.page5;
+package com.example.bytelift.ui.diet;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,15 +8,15 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.bytelift.databinding.FragmentPage5Binding;
+import com.example.bytelift.databinding.FragmentDietBinding;
 
-public class Page5Fragment extends Fragment {
+public class DietFragment extends Fragment {
 
-    private FragmentPage5Binding binding;
+    private FragmentDietBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentPage5Binding.inflate(inflater, container, false);
+        binding = FragmentDietBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         return root;
     }
@@ -27,5 +27,3 @@ public class Page5Fragment extends Fragment {
         binding = null;
     }
 }
-
-

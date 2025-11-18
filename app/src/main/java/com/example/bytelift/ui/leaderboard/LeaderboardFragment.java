@@ -1,4 +1,4 @@
-package com.example.bytelift.ui.page2;
+package com.example.bytelift.ui.leaderboard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,15 +8,15 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.bytelift.databinding.FragmentPage2Binding;
+import com.example.bytelift.databinding.FragmentLeaderboardBinding;
 
-public class Page2Fragment extends Fragment {
+public class LeaderboardFragment extends Fragment {
 
-    private FragmentPage2Binding binding;
+    private FragmentLeaderboardBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentPage2Binding.inflate(inflater, container, false);
+        binding = FragmentLeaderboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         return root;
     }
@@ -27,5 +27,3 @@ public class Page2Fragment extends Fragment {
         binding = null;
     }
 }
-
-

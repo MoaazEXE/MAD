@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Light theme colors -->
-    <color name="green_200">#A5D6A7</color>
+    <!-- Green accent colors -->
+    <color name="green_200">#81C784</color>
     <color name="green_500">#4CAF50</color>
     <color name="green_700">#388E3C</color>
 
-    <!-- Dark theme colors -->
-    <color name="dark_green_200">#81C784</color>
-    <color name="dark_green_500">#2E7D32</color>
-    <color name="dark_green_700">#1B5E20</color>
-
-    <!-- Accent colors -->
-    <color name="light_green_200">#C5E1A5</color>
-    <color name="light_green_700">#689F38</color>
+    <!-- Dark mode colors -->
+    <color name="dark_background">#121212</color>
+    <color name="dark_surface">#1E1E1E</color>
+    <color name="dark_surface_variant">#2C2C2C</color>
+    <color name="dark_gray">#424242</color>
+    <color name="light_gray">#757575</color>
 
     <!-- Base colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-    <!-- Side navigation gradient colors -->
-    <color name="side_nav_start">#4CAF50</color>
-    <color name="side_nav_center">#2E7D32</color>
-    <color name="side_nav_end">#1B5E20</color>
+    <color name="red">#F44336</color>
 </resources>

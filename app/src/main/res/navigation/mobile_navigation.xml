@@ -18,32 +18,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_page1"
-        android:name="com.example.bytelift.ui.page1.Page1Fragment"
-        android:label="@string/menu_page1"
-        tools:layout="@layout/fragment_page1" />
+        android:id="@+id/nav_leaderboard"
+        android:name="com.example.bytelift.ui.leaderboard.LeaderboardFragment"
+        android:label="@string/menu_leaderboard"
+        tools:layout="@layout/fragment_leaderboard" />
 
     <fragment
-        android:id="@+id/nav_page2"
-        android:name="com.example.bytelift.ui.page2.Page2Fragment"
-        android:label="@string/menu_page2"
-        tools:layout="@layout/fragment_page2" />
+        android:id="@+id/nav_workout"
+        android:name="com.example.bytelift.ui.workout.WorkoutFragment"
+        android:label="@string/menu_workout"
+        tools:layout="@layout/fragment_workout" />
 
     <fragment
-        android:id="@+id/nav_page3"
-        android:name="com.example.bytelift.ui.page3.Page3Fragment"
-        android:label="@string/menu_page3"
-        tools:layout="@layout/fragment_page3" />
+        android:id="@+id/nav_diet"
+        android:name="com.example.bytelift.ui.diet.DietFragment"
+        android:label="@string/menu_diet"
+        tools:layout="@layout/fragment_diet" />
 
     <fragment
-        android:id="@+id/nav_page4"
-        android:name="com.example.bytelift.ui.page4.Page4Fragment"
-        android:label="@string/menu_page4"
-        tools:layout="@layout/fragment_page4" />
-
-    <fragment
-        android:id="@+id/nav_page5"
-        android:name="com.example.bytelift.ui.page5.Page5Fragment"
-        android:label="@string/menu_page5"
-        tools:layout="@layout/fragment_page5" />
+        android:id="@+id/nav_settings"
+        android:name="com.example.bytelift.ui.settings_page.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

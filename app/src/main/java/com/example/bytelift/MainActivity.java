@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
-import android.view.MenuItem;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -61,32 +60,27 @@ public class MainActivity extends AppCompatActivity {
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_profile,
                 R.id.nav_home,
-                R.id.nav_page1,
-                R.id.nav_page2,
-                R.id.nav_page3,
-                R.id.nav_page4,
-                R.id.nav_page5)
+                R.id.nav_leaderboard,
+                R.id.nav_workout,
+                R.id.nav_diet,
+                R.id.nav_settings)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        
+        // Handle logout button click
+        binding.btnLogout.setOnClickListener(v -> {
+            logout();
+            drawer.closeDrawers();
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_logout) {
-            logout();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        // Remove the top menu completely
+        return false;
     }
 
     private void logout() {

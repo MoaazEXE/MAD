@@ -9,11 +9,10 @@
 
     <string name="menu_profile">Profile</string>
     <string name="menu_home">Home</string>
-    <string name="menu_page1">Page 1</string>
-    <string name="menu_page2">Page 2</string>
-    <string name="menu_page3">Page 3</string>
-    <string name="menu_page4">Page 4</string>
-    <string name="menu_page5">Page 5</string>
+    <string name="menu_leaderboard">Leaderboard</string>
+    <string name="menu_workout">Workout</string>
+    <string name="menu_diet">Diet</string>
+    <string name="menu_settings">Settings</string>
 
     <!-- Authentication strings -->
     <string name="welcome_back">Welcome Back</string>
