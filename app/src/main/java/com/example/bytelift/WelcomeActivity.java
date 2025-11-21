@@ -126,7 +126,7 @@ public class WelcomeActivity extends AppCompatActivity{
                                     Toast.makeText(WelcomeActivity.this, "Failed to save profile :" + e.getMessage(), Toast.LENGTH_SHORT).show();;
                     });
                 }else {
-                        navigateToMainActivity();
+                        navigateToOnboarding();
                     }
     })
                 .addOnFailureListener(e -> {
@@ -135,6 +135,13 @@ public class WelcomeActivity extends AppCompatActivity{
     }
     private void navigateToMainActivity() {
         Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+    private void navigateToOnboarding() {
+        Intent intent = new Intent(WelcomeActivity.this, OnboardingActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();

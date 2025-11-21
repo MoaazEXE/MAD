@@ -148,7 +148,8 @@ public class SignUpActivity extends AppCompatActivity {
                     binding.progressBar.setVisibility(View.GONE);
                     binding.btnSignUp.setEnabled(true);
                     Toast.makeText(SignUpActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
-                    navigateToMainActivity();
+
+                    navigateToOnboarding();  // ← CORRECT! Goes to Onboarding
                 })
                 .addOnFailureListener(e -> {
                     binding.progressBar.setVisibility(View.GONE);
@@ -247,6 +248,13 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void navigateToMainActivity() {
         Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+    private void navigateToOnboarding() {
+        Intent intent = new Intent(SignUpActivity.this, OnboardingActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
