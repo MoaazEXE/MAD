@@ -33,11 +33,22 @@
         android:id="@+id/nav_diet"
         android:name="com.example.bytelift.ui.diet.DietFragment"
         android:label="@string/menu_diet"
-        tools:layout="@layout/fragment_diet" />
+        tools:layout="@layout/fragment_diet">
+        <action
+            android:id="@+id/action_nav_diet_to_nav_recipes"
+            app:destination="@id/nav_recipes" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_settings"
         android:name="com.example.bytelift.ui.settings_page.SettingsFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_recipes"
+        android:name="com.example.bytelift.ui.diet.RecipesFragment"
+        android:label="Recipes"
+        tools:layout="@layout/fragment_recipes" />
+
 </navigation>
