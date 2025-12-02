@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="160dp"
+    android:layout_height="wrap_content"
+    android:background="@android:drawable/dialog_holo_light_frame"
+    android:layout_marginEnd="8dp">
+
+    <TextView
+        android:id="@+id/tv_day_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Monday"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_day_overview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PushUps, Squat…"
+        android:textColor="#444"
+        android:paddingTop="6dp"/>
+</LinearLayout>
