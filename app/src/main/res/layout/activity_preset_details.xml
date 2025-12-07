@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvPresetName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPresetDays"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:padding="8dp"/>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#DDDDDD"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPresetExercises"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnUseRoutine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Use Routine"
+        android:textAllCaps="false"/>
+</LinearLayout>

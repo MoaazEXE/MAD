@@ -74,21 +74,49 @@ public class WorkoutRoutineActivity extends AppCompatActivity {
     }
 
     private void startCreateRoutineFlow() {
-        showSelectDaysDialog(new OnDaysSelected() {
-            @Override
-            public void onSelected(List<String> selectedDays) {
-                if (selectedDays.isEmpty()) {
-                    Toast. makeText(WorkoutRoutineActivity. this, "Pick at least one day", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                Map<String, List<SelectedExercise>> configuredDays = new LinkedHashMap<>();
-                configureDayRecursive(selectedDays, 0, configuredDays, new Runnable() {
-                    @Override
-                    public void run() {
-                        askForRoutineNameAndSave(configuredDays);
+        // Show a simple dialog with two big buttons (Select Presets / Build Your Own)
+        android.view.LayoutInflater inflater = getLayoutInflater();
+        android.view.View view = inflater.inflate(R.layout.dialog_choose_preset_or_build, null);
+
+        // dialog_choose_preset_or_build is a small layout we will define below (or you can create it)
+        new androidx.appcompat.app.AlertDialog.Builder(this)
+                .setView(view)
+                .setCancelable(true)
+                .create()
+                .show();
+
+        // wire buttons (IDs inside the dialog layout)
+        android.widget.Button btnPresets = view.findViewById(R.id.btn_presets);
+        android.widget.Button btnBuild = view.findViewById(R.id.btn_build);
+
+        btnPresets.setOnClickListener(v -> {
+            // open PresetsActivity
+            startActivity(new android.content.Intent(WorkoutRoutineActivity.this, PresetsActivity.class));
+            // dismiss the dialog by walking up to parent (it's easier to just finish)
+            android.view.ViewParent p = view.getParent();
+            if (p instanceof android.view.View) ((android.view.View)p).setVisibility(android.view.View.GONE);
+        });
+
+        btnBuild.setOnClickListener(v -> {
+            // Keep the original flow for building your own routine:
+            showSelectDaysDialog(new OnDaysSelected() {
+                @Override
+                public void onSelected(List<String> selectedDays) {
+                    if (selectedDays.isEmpty()) {
+                        android.widget.Toast.makeText(WorkoutRoutineActivity.this, "Pick at least one day", android.widget.Toast.LENGTH_SHORT).show();
+                        return;
                     }
-                });
-            }
+                    java.util.Map<String, java.util.List<WorkoutRoutineActivity.SelectedExercise>> configuredDays = new java.util.LinkedHashMap<>();
+                    configureDayRecursive(selectedDays, 0, configuredDays, new Runnable() {
+                        @Override
+                        public void run() {
+                            askForRoutineNameAndSave(configuredDays);
+                        }
+                    });
+                }
+            });
+            android.view.ViewParent p = view.getParent();
+            if (p instanceof android.view.View) ((android.view.View)p).setVisibility(android.view.View.GONE);
         });
     }
 

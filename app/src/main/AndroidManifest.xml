@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bytelift">
 
-    <!-- Minimum and target SDKs (adjust values if your project uses different targets) -->
+    <!-- Minimum/target SDK (adjust if your project uses different values) -->
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33" />
 
     <application
@@ -12,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <!-- Launcher activity (your workouts / routines entry point) -->
+        <!-- Launcher / entry activity -->
         <activity
             android:name=".WorkoutRoutineActivity"
             android:exported="true">
@@ -22,12 +23,22 @@
             </intent-filter>
         </activity>
 
-        <!-- Routine details screen -->
+        <!-- Existing details activity -->
         <activity
             android:name=".RoutineDetailsActivity"
             android:exported="false" />
 
-        <!-- Add any other activities here and set android:exported accordingly -->
+        <!-- NEW: Presets list (tabs) -->
+        <activity
+            android:name=".PresetsActivity"
+            android:exported="false" />
+
+        <!-- NEW: Preset details (shows days + exercises, Use Routine button) -->
+        <activity
+            android:name=".PresetDetailsActivity"
+            android:exported="false" />
+
+        <!-- Add any other activities here -->
     </application>
 
 </manifest>
