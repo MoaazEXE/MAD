@@ -12,9 +12,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bytelift.R;
+import com.example.bytelift.ui.diet.Recipe;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.DocumentSnapshot;
+import android.util.Log;
 
 public class RecipesFragment extends Fragment {
 
@@ -26,53 +31,29 @@ public class RecipesFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         // Load our hardcoded data
-        List<Recipe> recipeList = getMockRecipes();
-        RecipesAdapter adapter = new RecipesAdapter(recipeList);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        RecipesAdapter adapter = new RecipesAdapter(new ArrayList<>());
         recyclerView.setAdapter(adapter);
 
+        db.collection("recipes")
+                .get()
+                .addOnSuccessListener(querySnapshot -> {
+                    List<Recipe> recipes = new ArrayList<>();
+                    for (DocumentSnapshot doc : querySnapshot) {
+                        Recipe recipe = doc.toObject(Recipe.class);
+                        if (recipe != null) {
+                            recipes.add(recipe);
+                        }
+                    }
+                    adapter.updateData(recipes);
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("RecipesFragment", "Failed to load recipes", e);
+                });
         return root;
     }
-
-    // --- HARDCODED DATA HERE ---
-    private List<Recipe> getMockRecipes() {
-        List<Recipe> list = new ArrayList<>();
-
-        list.add(new Recipe("Grilled Chicken & Quinoa", 450, 45, 35, 12,
-                "200g Chicken Breast, 1 cup Quinoa, Mixed Veggies. Grill chicken with lemon pepper."));
-
-        list.add(new Recipe("Greek Yogurt Power Bowl", 320, 25, 40, 8,
-                "1 cup Greek Yogurt (0%), 1 scoop Whey Protein, Berries, 1 tbsp Honey. Mix and enjoy."));
-
-        list.add(new Recipe("Tuna Salad Wrap", 380, 35, 25, 10,
-                "1 can Tuna, 1 tbsp Light Mayo, Lettuce, Whole Wheat Wrap. Mix tuna and mayo, wrap tight."));
-
-        list.add(new Recipe("Egg White Omelette", 250, 30, 5, 8,
-                "6 Egg Whites, Spinach, Mushrooms, 1 slice Low Fat Cheese. Cook in non-stick pan."));
-
-        list.add(new Recipe("Beef Stir Fry", 500, 50, 40, 18,
-                "150g Lean Beef Strips, Broccoli, Soy Sauce, Rice Noodles. Stir fry beef first, then veggies."));
-
-        return list;
-    }
-
     // --- INTERNAL MODEL CLASS ---
-    static class Recipe {
-        String name;
-        int calories;
-        int protein;
-        int carbs;
-        int fats;
-        String instructions;
-
-        public Recipe(String name, int calories, int protein, int carbs, int fats, String instructions) {
-            this.name = name;
-            this.calories = calories;
-            this.protein = protein;
-            this.carbs = carbs;
-            this.fats = fats;
-            this.instructions = instructions;
-        }
-    }
 
     // --- INTERNAL ADAPTER CLASS ---
     static class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeViewHolder> {
@@ -81,6 +62,12 @@ public class RecipesFragment extends Fragment {
 
         public RecipesAdapter(List<Recipe> recipes) {
             this.recipes = recipes;
+        }
+
+        public void updateData(List<Recipe> newRecipes) {
+            recipes.clear();
+            recipes.addAll(newRecipes);
+            notifyDataSetChanged();
         }
 
         @NonNull
