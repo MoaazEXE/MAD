@@ -21,6 +21,11 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
     buildFeatures {
         viewBinding = true
         dataBinding = true
@@ -42,6 +47,10 @@ dependencies {
 
     // Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-storage")
+
 
     // Firebase Auth (you were already using this)
     implementation("com.google.firebase:firebase-auth")
@@ -63,4 +72,15 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    // Glide for image loading
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
+
+    // Firebase Storage for profile pictures
+    implementation ("com.google.firebase:firebase-storage")
+    // WorkManager for notifications
+    implementation("androidx.work:work-runtime:2.9.0")
+    // Firebase Analytics
+    implementation("com.google.firebase:firebase-analytics")
 }

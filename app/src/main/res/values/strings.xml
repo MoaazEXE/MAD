@@ -29,5 +29,42 @@
     <string name="sign_up_with_google">Sign up with Google</string>
     <string name="dont_have_account">Don\'t have an account?</string>
     <string name="already_have_account">Already have an account?</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="account">Account</string>
+    <string name="edit_account">Edit Account</string>
     <string name="logout">Logout</string>
+    <string name="delete_account">Delete Account</string>
+
+    <string name="notifications_reminders">Notifications &amp; Reminders</string>
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="workout_reminders">Workout Reminders</string>
+    <string name="reminder_schedule">Reminder Schedule</string>
+
+    <string name="app_preferences">App Preferences</string>
+    <string name="theme">Theme</string>
+    <string name="language">Language</string>
+    <string name="weight_unit">Weight Unit</string>
+    <string name="height_unit">Height Unit</string>
+
+    <string name="data_privacy_control">Data, Privacy &amp; Control</string>
+    <string name="export_my_data">Export My Data</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="clear_local_cache">Clear Local Cache</string>
+
+    <string name="support">Support</string>
+    <string name="help_faq">Help &amp; FAQ</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="report_a_bug">Report a Bug</string>
+
+    <string name="about">About</string>
+    <string name="version">Version</string>
+
+    <!-- Accessibility -->
+    <string name="navigate">Navigate</string>
+    <string name="toggle_setting">Toggle setting</string>
+    <string name="profile_picture">Profile picture</string>
+    <string name="change_photo">Change photo</string>
 </resources>

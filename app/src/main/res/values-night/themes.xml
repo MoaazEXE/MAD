@@ -30,4 +30,13 @@
         <item name="elevationOverlayEnabled">true</item>
         <item name="elevationOverlayColor">@color/white</item>
     </style>
+
+    <!-- TimePicker Theme for Dark Mode -->
+    <style name="TimePickerTheme" parent="Theme.MaterialComponents.Dialog">
+        <item name="android:textColorPrimary">@color/text_primary_light</item>
+        <item name="android:textColorSecondary">@color/text_secondary_light</item>
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="colorAccent">@color/green_500</item>
+    </style>
+
 </resources>

@@ -10,6 +10,7 @@
         <item name="colorSecondary">@color/green_200</item>
         <item name="colorSecondaryVariant">@color/green_700</item>
         <item name="colorOnSecondary">@color/black</item>
+
         
         <!-- Background and surface colors (Dark mode) -->
         <item name="android:windowBackground">@color/dark_background</item>
@@ -23,8 +24,8 @@
         <item name="android:navigationBarColor">@color/black</item>
         
         <!-- Text colors -->
-        <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:textColorSecondary">@color/light_gray</item>
+        <item name="android:textColorPrimary">@color/text_primary_light</item>
+        <item name="android:textColorSecondary">@color/text_secondary_light</item>
         
         <!-- Card and elevated surface colors -->
         <item name="elevationOverlayEnabled">true</item>
@@ -34,6 +35,14 @@
     <style name="Theme.MyApplication.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- TimePicker Theme for Light Mode -->
+    <style name="TimePickerTheme" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:textColorPrimary">@color/text_primary_light</item>
+        <item name="android:textColorSecondary">@color/text_secondary_light</item>
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="colorAccent">@color/green_500</item>
     </style>
 
     <style name="Theme.MyApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

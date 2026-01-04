@@ -1,0 +1,6 @@
+<!-- res/drawable/bg_theme_option_selected.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="?attr/colorPrimaryContainer"/>
+    <stroke android:width="2dp" android:color="?attr/colorPrimary"/>
+    <corners android:radius="12dp"/>
+</shape>

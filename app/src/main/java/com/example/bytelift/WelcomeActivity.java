@@ -23,7 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import com.example.bytelift.models.UserProfile;
 
-public class WelcomeActivity extends AppCompatActivity{
+public class WelcomeActivity extends BaseActivity{
 
     private ActivityWelcomeBinding binding;
     private FirebaseAuth mAuth;

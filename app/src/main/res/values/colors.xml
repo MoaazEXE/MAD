@@ -16,4 +16,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#F44336</color>
+
+    <color name="destructive_red">#D32F2F</color>
+
+    <!-- Light mode colors -->
+    <color name="card_background_light">#FFFFFF</color>
+    <color name="background_light">#F5F5F5</color>
+    <color name="text_primary_light">#212121</color>
+    <color name="text_secondary_light">#757575</color>
 </resources>
