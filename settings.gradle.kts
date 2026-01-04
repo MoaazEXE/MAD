@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "trialProfile"
+rootProject.name = "MAD"
 include(":app")

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,19 +12,56 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TrialProfile">
+        android:theme="@style/Theme.MyApplication">
+
+        <!-- Launcher -->
         <activity
-            android:name=".ProfileActivity"
-            android:exported="true">
+            android:name="com.example.bytelift.WelcomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Core app -->
         <activity
-            android:name=".MainActivity"
-            android:exported="false"/>
+            android:name="com.example.bytelift.MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
+        <activity
+            android:name="com.example.bytelift.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
+        <activity
+            android:name="com.example.bytelift.SignUpActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
+        <activity
+            android:name="com.example.bytelift.OnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
+        <!-- WORKOUT SYSTEM (correct package paths!) -->
+        <activity
+            android:name="com.example.bytelift.ui.workout.WorkoutRoutineActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
+        <activity
+            android:name="com.example.bytelift.ui.workout.DayWorkoutActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
+        <activity
+            android:name="com.example.bytelift.ui.workout.RoutineDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
     </application>
 
 </manifest>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="motivation_quotes">
+        <item>You are stronger than you think.</item>
+        <item>Small steps still move you forward.</item>
+        <item>Consistency beats perfection.</item>
+        <item>One workout at a time.</item>
+        <item>Your only competition is yourself.</item>
+        <item>Don\'t stop until you\'re proud.</item>
+    </string-array>
+
+</resources>
