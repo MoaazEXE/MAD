@@ -7,6 +7,7 @@ public class Recipe {
     public int protein;
     public int carbs;
     public int fats;
+    public String ingredients;
     public String instructions;
 
     // REQUIRED empty constructor for Firestore

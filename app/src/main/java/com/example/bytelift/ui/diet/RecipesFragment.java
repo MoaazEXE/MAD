@@ -40,12 +40,27 @@ public class RecipesFragment extends Fragment {
                 .get()
                 .addOnSuccessListener(querySnapshot -> {
                     List<Recipe> recipes = new ArrayList<>();
+
                     for (DocumentSnapshot doc : querySnapshot) {
                         Recipe recipe = doc.toObject(Recipe.class);
                         if (recipe != null) {
+
+                            // 🔢 Recalculate calories from macros
+                            int protein = Math.max(recipe.protein, 0);
+                            int carbs   = Math.max(recipe.carbs, 0);
+                            int fats    = Math.max(recipe.fats, 0);
+
+                            int calculatedCalories =
+                                    (protein * 4) +
+                                            (carbs * 4) +
+                                            (fats * 9);
+
+                            recipe.calories = calculatedCalories;
+
                             recipes.add(recipe);
                         }
                     }
+
                     adapter.updateData(recipes);
                 })
                 .addOnFailureListener(e -> {
@@ -81,9 +96,29 @@ public class RecipesFragment extends Fragment {
         public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
             Recipe recipe = recipes.get(position);
             holder.tvName.setText(recipe.name);
-            holder.tvCalories.setText(recipe.calories + " kcal");
+            holder.tvCalories.setText(recipe.calories + " kcal (Cal)");
             holder.tvMacros.setText("Protein: " + recipe.protein + "g • Carbs: " + recipe.carbs + "g • Fat: " + recipe.fats + "g");
-            holder.tvIngredients.setText(recipe.instructions);
+            holder.tvIngredients.setText("Tap to view recipe");
+
+            holder.itemView.setOnClickListener(v -> {
+
+                String message =
+                        "Calories: " + recipe.calories + " kcal\n\n" +
+                                "Macros:\n" +
+                                "• Protein: " + recipe.protein + " g\n" +
+                                "• Carbs: " + recipe.carbs + " g\n" +
+                                "• Fat: " + recipe.fats + " g\n\n" +
+                                "Ingredients:\n" +
+                                (recipe.ingredients != null ? recipe.ingredients : "Not available") +
+                                "\n\nInstructions:\n" +
+                                (recipe.instructions != null ? recipe.instructions : "Not available");
+
+                new androidx.appcompat.app.AlertDialog.Builder(v.getContext())
+                        .setTitle(recipe.name)
+                        .setMessage(message)
+                        .setPositiveButton("Close", null)
+                        .show();
+            });
         }
 
         @Override
