@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Green accent colors -->
-    <color name="green_200">#81C784</color>
-    <color name="green_500">#4CAF50</color>
-    <color name="green_700">#388E3C</color>
+    <!-- 🔵 Material Design colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
 
-    <!-- Dark mode colors -->
-    <color name="dark_background">#121212</color>
-    <color name="dark_surface">#1E1E1E</color>
-    <color name="dark_surface_variant">#2C2C2C</color>
-    <color name="dark_gray">#424242</color>
-    <color name="light_gray">#757575</color>
+    <!-- Basic colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
 
-    <!-- Base colors -->
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="red">#F44336</color>
+    <!-- ✅ Your workout colors -->
+    <color name="bg_dark">#1C1C1E</color>
+    <color name="card_dark">#2C2C2E</color>
+    <color name="gym_green">#3DB854</color>
+    <color name="gym_green_dark">#2FA045</color>
 
-    <color name="destructive_red">#D32F2F</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_muted">#8E8E93</color>
+    <color name="text_gray">#636366</color>
 
-    <!-- Light mode colors -->
-    <color name="card_background_light">#FFFFFF</color>
-    <color name="background_light">#F5F5F5</color>
-    <color name="text_primary_light">#212121</color>
-    <color name="text_secondary_light">#757575</color>
+    <color name="danger">#FF3B30</color>
+    <color name="warning">#FF9500</color>
+
+    <!-- Additional workout colors -->
+    <color name="background_dark">#121212</color>
+    <color name="divider_dark">#2A2A2A</color>
+    <color name="red_delete">#F44336</color>
+    <color name="blue_edit">#2196F3</color>
+
+    <!-- ✅ MISSING COLORS FROM THEIR PROJECT - ADD THESE:  -->
+    <color name="red">#FF3B30</color>
+    <color name="dark_surface">#1C1C1E</color>
+    <color name="dark_surface_variant">#2C2C2E</color>
+    <color name="dark_gray">#3A3A3C</color>
+    <color name="green_500">#3DB854</color>
 </resources>

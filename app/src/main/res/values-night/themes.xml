@@ -1,42 +1,11 @@
-<resources>
-    <!-- Dark mode theme (same as base theme) -->
-    <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color (Green accents) -->
-        <item name="colorPrimary">@color/green_500</item>
-        <item name="colorPrimaryVariant">@color/green_700</item>
-        <item name="colorOnPrimary">@color/white</item>
-        
-        <!-- Secondary brand color -->
-        <item name="colorSecondary">@color/green_200</item>
-        <item name="colorSecondaryVariant">@color/green_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        
-        <!-- Background and surface colors (Dark mode) -->
-        <item name="android:windowBackground">@color/dark_background</item>
-        <item name="android:colorBackground">@color/dark_background</item>
-        <item name="colorSurface">@color/dark_surface</item>
-        <item name="colorOnSurface">@color/white</item>
-        <item name="colorOnBackground">@color/white</item>
-        
-        <!-- Status bar and navigation bar -->
-        <item name="android:statusBarColor">@color/black</item>
-        <item name="android:navigationBarColor">@color/black</item>
-        
-        <!-- Text colors -->
-        <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:textColorSecondary">@color/light_gray</item>
-        
-        <!-- Card and elevated surface colors -->
-        <item name="elevationOverlayEnabled">true</item>
-        <item name="elevationOverlayColor">@color/white</item>
-    </style>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TimePicker Theme for Dark Mode -->
-    <style name="TimePickerTheme" parent="Theme.MaterialComponents.Dialog">
-        <item name="android:textColorPrimary">@color/text_primary_light</item>
-        <item name="android:textColorSecondary">@color/text_secondary_light</item>
-        <item name="android:textColor">@color/text_primary_light</item>
-        <item name="colorAccent">@color/green_500</item>
+    <!-- 🔵 Dark theme -->
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/gym_green</item>
+        <item name="colorPrimaryVariant">@color/gym_green_dark</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
     </style>
 
 </resources>

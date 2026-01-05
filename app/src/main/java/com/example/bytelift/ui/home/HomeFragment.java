@@ -2,25 +2,26 @@ package com.example.bytelift.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view. LayoutInflater;
+import android. view.View;
+import android. view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.fragment.app. Fragment;
+import androidx.lifecycle. ViewModelProvider;
 
-import com.example.bytelift.R;
+import com. example.bytelift.R;
 import com.example.bytelift.databinding.FragmentHomeBinding;
-import com.example.bytelift.utils.StreakManager;
-import com.example.bytelift.ui.workout.RoutineStorage;
-import com.example.bytelift.ui.workout.WorkoutRoutineActivity;
+import com.example. bytelift.utils. StreakManager;
+import com.example.bytelift.ui.workout.activities.WorkoutActivity;  // ✅ Your main workout screen
+import com.example.bytelift.ui.workout.models.Routine;  // ✅ Correct path
+import com.example.bytelift.ui.workout.models.Exercise;  // ✅ Correct path
+import com.example.bytelift.ui.workout.utils.DataManager;  // ✅ Correct path
 
 import java.util.Calendar;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 public class HomeFragment extends Fragment {
@@ -34,6 +35,9 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        // ✅ Initialize DataManager with context
+        DataManager.init(requireContext());
 
         // Default text (from ViewModel template)
         final TextView textView = binding.textHome;
@@ -50,7 +54,7 @@ public class HomeFragment extends Fragment {
         TextView streakView = root.findViewById(R.id.tvStreak);
         streakView.setText("🔥 Streak: " + streak + " days");
 
-        // 💪 Today’s workout “challenge”
+        // 💪 Today's workout "challenge"
         setupTodayWorkoutChallenge(root);
 
         return root;
@@ -62,67 +66,81 @@ public class HomeFragment extends Fragment {
 
         if (tvChallenge == null || btnOpenWorkout == null) return;
 
-        // Load saved routines
-        List<WorkoutRoutineActivity.WorkoutRoutine> routines =
-                RoutineStorage.loadRoutines(requireContext());
+        // ✅ Load routines using DataManager (no parameter needed)
+        List<Routine> routines = DataManager.getRoutines();
 
         // No routines at all
         if (routines == null || routines.isEmpty()) {
             tvChallenge.setText("No workout routines yet.\nCreate one in the Workout tab!");
-            btnOpenWorkout.setOnClickListener(v ->
-                    startActivity(new Intent(v.getContext(), WorkoutRoutineActivity.class)));
+            btnOpenWorkout. setOnClickListener(v ->
+                    startActivity(new Intent(requireContext(), WorkoutActivity.class)));
             return;
         }
 
-        // For now: just use the first routine
-        WorkoutRoutineActivity.WorkoutRoutine routine = routines.get(0);
-        Map<String, List<WorkoutRoutineActivity.SelectedExercise>> dayMap = routine.dayToExercises;
-
-        if (dayMap == null || dayMap.isEmpty()) {
-            tvChallenge.setText("No workout days configured.\nEdit your routine in the Workout tab.");
-            btnOpenWorkout.setOnClickListener(v ->
-                    startActivity(new Intent(v.getContext(), WorkoutRoutineActivity.class)));
-            return;
-        }
-
+        // Get today's day name
         String todayName = getTodayName();
-        List<WorkoutRoutineActivity.SelectedExercise> todayList = dayMap.get(todayName);
 
-        if (todayList == null || todayList.isEmpty()) {
+        // Find a routine that has today scheduled
+        Routine todayRoutine = null;
+        for (Routine routine : routines) {
+            // ✅ Check if routine. days contains today
+            if (routine.days != null && routine.days.containsKey(todayName)) {
+                todayRoutine = routine;
+                break;
+            }
+        }
+
+        // No routine for today
+        if (todayRoutine == null) {
             tvChallenge.setText("No workout scheduled for " + todayName + ".\nEnjoy your rest day!");
+            btnOpenWorkout.setOnClickListener(v ->
+                    startActivity(new Intent(requireContext(), WorkoutActivity.class)));
+            return;
+        }
+
+        // ✅ Get today's exercises from the days Map
+        List<Exercise> exercises = todayRoutine.days.get(todayName);
+
+        if (exercises == null || exercises.isEmpty()) {
+            tvChallenge.setText("No exercises scheduled for " + todayName + ".\nEnjoy your rest day!");
         } else {
             StringBuilder sb = new StringBuilder();
             sb.append("Today's workout (").append(todayName).append("):\n");
+            sb.append("Routine: ").append(todayRoutine.name).append("\n\n");
 
-            int limit = Math.min(todayList.size(), 4);
+            int limit = Math.min(exercises.size(), 4);
             for (int i = 0; i < limit; i++) {
-                WorkoutRoutineActivity.SelectedExercise ex = todayList.get(i);
+                Exercise ex = exercises.get(i);
                 String name = (ex != null && ex.name != null) ? ex.name : "Exercise";
-                sb.append("• ").append(name).append("\n");
+                String sets = (ex != null) ? String.valueOf(ex.sets) : "0";
+                String reps = (ex != null) ? String.valueOf(ex.reps) : "0";
+
+                sb.append("• ").append(name);
+                sb.append(" - ").append(sets).append(" sets × ").append(reps).append(" reps\n");
             }
 
-            if (todayList.size() > limit) {
-                sb.append("...and ").append(todayList.size() - limit).append(" more");
+            if (exercises.size() > limit) {
+                sb.append("\n... and ").append(exercises.size() - limit).append(" more exercises");
             }
 
             tvChallenge.setText(sb.toString());
         }
 
-        // Button → open full Workout screen
+        // ✅ Button → open WorkoutActivity
         btnOpenWorkout.setOnClickListener(v ->
-                startActivity(new Intent(v.getContext(), WorkoutRoutineActivity.class)));
+                startActivity(new Intent(requireContext(), WorkoutActivity.class)));
     }
 
     private String getTodayName() {
         Calendar cal = Calendar.getInstance();
         switch (cal.get(Calendar.DAY_OF_WEEK)) {
-            case Calendar.MONDAY: return "Monday";
+            case Calendar.MONDAY:  return "Monday";
             case Calendar.TUESDAY: return "Tuesday";
-            case Calendar.WEDNESDAY: return "Wednesday";
+            case Calendar.WEDNESDAY:  return "Wednesday";
             case Calendar.THURSDAY: return "Thursday";
-            case Calendar.FRIDAY: return "Friday";
+            case Calendar.FRIDAY:  return "Friday";
             case Calendar.SATURDAY: return "Saturday";
-            case Calendar.SUNDAY: return "Sunday";
+            case Calendar.SUNDAY:  return "Sunday";
         }
         return "Today";
     }

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:padding="22dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title Row with Tag -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:id="@+id/tv_routine_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Upper Body Split"
+                android:textColor="@color/text_white"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="PRESET"
+                android:textColor="#3DB854"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/tag_green_outline"
+                android:layout_marginLeft="12dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_days_per_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 days/week"
+            android:textColor="@color/text_muted"
+            android:textSize="14sp"
+            android:layout_marginBottom="24dp"/>
+
+        <LinearLayout
+            android:id="@+id/layout_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+        <!-- Notes Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notes"
+            android:textColor="@color/text_white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/et_notes"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/input_field"
+            android:hint="Add notes about this routine..."
+            android:textColorHint="@color/text_muted"
+            android:textColor="@color/text_white"
+            android:padding="16dp"
+            android:gravity="top|start"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLines="8"
+            android:scrollbars="vertical"/>
+
+        <Button
+            android:id="@+id/btn_save_notes"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="SAVE NOTES"
+            android:textColor="@color/text_white"
+            android:textStyle="bold"
+            android:background="@drawable/button_outline"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/btn_start_workout"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="START WORKOUT"
+            android:textColor="@color/text_white"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/green_button"/>
+
+    </LinearLayout>
+
+</ScrollView>
