@@ -12,6 +12,8 @@ import androidx.appcompat.app. AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview. widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.bytelift.utils.StreakManager;
 import com. google.android.material.bottomsheet. BottomSheetDialog;
 import com.example.bytelift. R;
 import com.example.bytelift.ui.workout.adapters.RoutineAdapter;
@@ -41,15 +43,14 @@ public class WorkoutActivity extends AppCompatActivity {
         routineAdapter = new RoutineAdapter(routines, new RoutineAdapter.OnRoutineClickListener() {
             @Override
             public void onOpen(Routine routine) {
-                Intent intent = new Intent(WorkoutActivity. this, RoutineDetailActivity. class);
+                Intent intent = new Intent(WorkoutActivity.this, RoutineDetailActivity.class);
                 intent.putExtra("routine", routine);
                 startActivity(intent);
             }
 
             @Override
             public void onEdit(Routine routine) {
-                // Navigate to edit flow starting from day selection
-                Intent intent = new Intent(WorkoutActivity.this, SelectDaysActivity. class);
+                Intent intent = new Intent(WorkoutActivity.this, SelectDaysActivity.class);
                 intent.putExtra("editMode", true);
                 intent.putExtra("routine", routine);
                 startActivity(intent);
@@ -58,6 +59,19 @@ public class WorkoutActivity extends AppCompatActivity {
             @Override
             public void onDelete(Routine routine) {
                 deleteRoutine(routine);
+            }
+
+            @Override
+            public void onSetActive(Routine routine) {  // ✅ NEW METHOD
+                // Set this routine as active for streak tracking
+                StreakManager.setActiveRoutine(WorkoutActivity.this, routine. routineId);
+
+                // Update UI
+                routineAdapter.notifyDataSetChanged();
+
+                Toast.makeText(WorkoutActivity. this,
+                        "✅ " + routine.name + " is now your active routine for streak tracking!",
+                        Toast.LENGTH_LONG).show();
             }
         });
 

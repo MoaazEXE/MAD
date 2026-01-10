@@ -2,9 +2,9 @@ package com.example.bytelift.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view. LayoutInflater;
-import android. view.View;
-import android. view.ViewGroup;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -50,9 +50,11 @@ public class HomeFragment extends Fragment {
         tvMotivation.setText(randomQuote);
 
         // 🔥 Streak
-        int streak = StreakManager.updateStreak(requireContext());
+        StreakManager.init(requireContext());
+        int weekStreak = StreakManager.getCurrentStreak(requireContext());
+        String weekProgress = StreakManager. getWeekProgress(requireContext());
         TextView streakView = root.findViewById(R.id.tvStreak);
-        streakView.setText("🔥 Streak: " + streak + " days");
+        streakView.setText("🔥 Streak: " + weekStreak + " weeks\n📊 This week: " + weekProgress);
 
         // 💪 Today's workout "challenge"
         setupTodayWorkoutChallenge(root);

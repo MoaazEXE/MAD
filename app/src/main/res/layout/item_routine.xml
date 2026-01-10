@@ -9,6 +9,14 @@
     app:cardElevation="2dp"
     app:cardBackgroundColor="@color/card_dark">
 
+    <!-- ✅ Green border for active routine -->
+    <View
+        android:id="@+id/active_border"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/active_routine_border"
+        android:visibility="gone"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,6 +30,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
+            <!-- Routine Name -->
             <TextView
                 android:id="@+id/tv_routine_name"
                 android:layout_width="wrap_content"
@@ -31,29 +40,76 @@
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/tv_days"
+            <!-- ✅ Days + Progress (Horizontal) -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="3 days/week"
-                android:textColor="@color/text_muted"
-                android:textSize="14sp"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
-            <TextView
-                android:id="@+id/tv_type"
+                <TextView
+                    android:id="@+id/tv_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 days/week"
+                    android:textColor="@color/text_muted"
+                    android:textSize="14sp"/>
+
+                <!-- ✅ Progress (only visible for active routine) -->
+                <TextView
+                    android:id="@+id/tv_card_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="• 📊 2/3 workouts"
+                    android:textColor="@color/gym_green"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <!-- ✅ Tags Container -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:text="CUSTOM"
-                android:textColor="#3DB854"
-                android:textSize="11sp"
-                android:textStyle="bold"
-                android:background="@drawable/tag_green_outline"/>
+                android:orientation="horizontal">
+
+                <!-- Type Tag (CUSTOM/PRESET) -->
+                <TextView
+                    android:id="@+id/tv_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="CUSTOM"
+                    android:textColor="#3DB854"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/tag_green_outline"/>
+
+                <!-- ✅ Active Tag (Only visible when active) -->
+                <TextView
+                    android:id="@+id/tv_active_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="🔥 ACTIVE"
+                    android:textColor="@color/gym_green"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/tag_active"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

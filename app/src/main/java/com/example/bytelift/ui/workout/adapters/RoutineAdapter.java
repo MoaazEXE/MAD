@@ -1,121 +1,103 @@
-package com.example.bytelift.ui.workout.adapters;
+package com.example.bytelift. ui.workout.adapters;
 
-import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view. View;
+import android.view. ViewGroup;
 import android.widget.ImageButton;
 import android.widget. TextView;
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget. RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import com.example.bytelift.R;
-import com.example.bytelift.ui.workout.activities.SelectDaysActivity;
-import com.example.bytelift.ui.workout.models.Routine;
-import java.util.ArrayList;
+import com. example.bytelift.ui.workout.models.Routine;
+import com. example.bytelift.utils.StreakManager;
 import java.util.List;
 
-public class RoutineAdapter extends RecyclerView.Adapter<RoutineAdapter.ViewHolder> {
+public class RoutineAdapter extends RecyclerView.Adapter<RoutineAdapter.RoutineViewHolder> {
+
+    private final List<Routine> routines;
+    private final OnRoutineClickListener listener;
 
     public interface OnRoutineClickListener {
         void onOpen(Routine routine);
         void onEdit(Routine routine);
         void onDelete(Routine routine);
-    }
 
-    private List<Routine> routines;
-    private OnRoutineClickListener listener;
-    private Context context;
+        void onSetActive(Routine routine);
+    }
 
     public RoutineAdapter(List<Routine> routines, OnRoutineClickListener listener) {
         this.routines = routines;
         this.listener = listener;
     }
 
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        context = parent.getContext();
-        View view = LayoutInflater. from(context).inflate(R.layout.item_routine, parent, false);
-        return new ViewHolder(view);
+    public RoutineViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_routine, parent, false);
+        return new RoutineViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        Routine rt = routines.get(position);
+    public void onBindViewHolder(@NonNull RoutineViewHolder holder, int position) {
+        Routine routine = routines.get(position);
 
-        android.util.Log.d("DEBUG_ADAPTER", "===== BINDING POSITION " + position + " =====");
-        android.util.Log.d("DEBUG_ADAPTER", "Routine name: '" + rt.name + "'");
-        android.util.Log. d("DEBUG_ADAPTER", "Routine ID: " + rt. routineId);
-        android.util.Log.d("DEBUG_ADAPTER", "Routine type:  " + rt.type);
+        holder.tvName. setText(routine.name);
+        holder.tvDays.setText(routine.daysPerWeek + " days/week");
+        holder.tvType.setText(routine. type.equals("custom") ? "CUSTOM" : "PRESET");
 
-        holder.tvName.setText(rt.name);
-        holder.tvDays.setText(rt.daysPerWeek + " days/week");
-        holder.tvType.setText(rt.type. equals("custom") ? "CUSTOM" : "PRESET");
-        holder.tvType.setBackgroundResource(R.drawable.tag_green_outline);
-        holder.tvType.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.gym_green));
+        // ✅ Show green border, active tag, and progress if active
+        if (routine.isActiveForStreak) {
+            holder. activeBorder.setVisibility(View.VISIBLE);
+            holder.tvActiveTag.setVisibility(View.VISIBLE);
+            holder.tvCardProgress.setVisibility(View.VISIBLE);
 
-        holder.card.setOnClickListener(v -> listener.onOpen(rt));
+            // Get and display progress
+            String progress = StreakManager.getWeekProgress(holder.itemView.getContext());
+            // Format:  "2 of 3 workouts" → display as "• 📊 2/3 workouts"
+            String[] parts = progress.split(" of ");
+            if (parts.length == 2) {
+                String completed = parts[0];
+                String total = parts[1]. split(" ")[0];
+                holder.tvCardProgress.setText("• 📊 " + completed + "/" + total + " workouts");
+            } else {
+                holder.tvCardProgress.setText("• 📊 " + progress);
+            }
+        } else {
+            holder.activeBorder. setVisibility(View.GONE);
+            holder.tvActiveTag.setVisibility(View. GONE);
+            holder.tvCardProgress.setVisibility(View. GONE);
+        }
 
-        // ✅ UPDATED EDIT LOGIC
-        holder.btnEdit.setOnClickListener(v -> {
-            // Extract which days are in this routine
-            ArrayList<Integer> selectedDays = extractDaysFromRoutine(rt);
-
-            android.util.Log.d("DEBUG_ADAPTER", "Edit clicked for:  " + rt.name);
-            android.util.Log.d("DEBUG_ADAPTER", "Extracted days: " + selectedDays);
-            android.util.Log.d("DEBUG_ADAPTER", "Routine has days: " + (rt.days != null ? rt. days.keySet() : "null"));
-
-            // Navigate to SelectDaysActivity with edit mode
-            Intent intent = new Intent(context, SelectDaysActivity.class);
-            intent.putExtra("editMode", true);
-            intent.putExtra("routine", rt);
-            intent.putIntegerArrayListExtra("preSelectedDays", selectedDays);
-            context. startActivity(intent);
-        });
-
-        holder.btnDelete.setOnClickListener(v -> listener.onDelete(rt));
+        // Button clicks
+        holder.cardRoutine.setOnClickListener(v -> listener.onOpen(routine));
+        holder.btnEdit. setOnClickListener(v -> listener.onEdit(routine));
+        holder.btnDelete.setOnClickListener(v -> listener.onDelete(routine));
     }
 
     @Override
     public int getItemCount() {
-        return routines. size();
+        return routines.size();
     }
 
-    // ✅ NEW METHOD: Extract day indices from routine
-    private ArrayList<Integer> extractDaysFromRoutine(Routine routine) {
-        ArrayList<Integer> selectedDays = new ArrayList<>();
-
-        if (routine.days == null || routine.days.isEmpty()) {
-            android.util.Log. d("DEBUG_ADAPTER", "Routine has no days!");
-            return selectedDays;
-        }
-
-        // Map day keys to indices
-        String[] dayKeys = {"monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"};
-
-        for (int i = 0; i < dayKeys.length; i++) {
-            if (routine.days.containsKey(dayKeys[i])) {
-                selectedDays. add(i);
-                android.util.Log.d("DEBUG_ADAPTER", "Found day: " + dayKeys[i] + " at index " + i);
-            }
-        }
-
-        return selectedDays;
-    }
-
-    static class ViewHolder extends RecyclerView.ViewHolder {
-        CardView card;
-        TextView tvName, tvDays, tvType;
+    static class RoutineViewHolder extends RecyclerView.ViewHolder {
+        CardView cardRoutine;
+        TextView tvName, tvDays, tvType, tvActiveTag, tvCardProgress;
         ImageButton btnEdit, btnDelete;
+        View activeBorder;
 
-        ViewHolder(View v) {
-            super(v);
-            card = v.findViewById(R.id.card_routine);
-            tvName = v.findViewById(R.id.tv_routine_name);
-            tvDays = v.findViewById(R.id.tv_days);
-            tvType = v.findViewById(R. id.tv_type);
-            btnEdit = v.findViewById(R.id.btn_edit);
-            btnDelete = v.findViewById(R.id.btn_delete);
+        RoutineViewHolder(@NonNull View itemView) {
+            super(itemView);
+            cardRoutine = itemView.findViewById(R. id.card_routine);
+            tvName = itemView.findViewById(R.id.tv_routine_name);
+            tvDays = itemView.findViewById(R.id.tv_days);
+            tvType = itemView.findViewById(R.id.tv_type);
+            tvActiveTag = itemView. findViewById(R.id.tv_active_tag);
+            tvCardProgress = itemView.findViewById(R.id.tv_card_progress);
+            btnEdit = itemView.findViewById(R.id.btn_edit);
+            btnDelete = itemView.findViewById(R.id.btn_delete);
+            activeBorder = itemView.findViewById(R.id.active_border);
         }
     }
 }

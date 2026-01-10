@@ -52,7 +52,31 @@
             android:text="3 days/week"
             android:textColor="@color/text_muted"
             android:textSize="14sp"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="8dp"/>
+
+        <!-- ✅ Active Tag (shows below days/week when active) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/tv_active_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="🔥 ACTIVE"
+                android:textColor="@color/gym_green"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/tag_active"
+                android:visibility="gone"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/layout_days"

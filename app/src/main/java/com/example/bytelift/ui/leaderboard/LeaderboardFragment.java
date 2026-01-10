@@ -65,7 +65,6 @@ public class LeaderboardFragment extends Fragment {
             return;
         }
 
-        int streak = StreakManager.updateStreak(requireContext());
 
         String uid = user.getUid();
         String name = user.getDisplayName();
@@ -78,7 +77,7 @@ public class LeaderboardFragment extends Fragment {
 
         Map<String, Object> data = new HashMap<>();
         data.put("name", name);
-        data.put("streak", streak);
+
         data.put("updatedAt", System.currentTimeMillis());
 
         leaderboardRef.document(uid)

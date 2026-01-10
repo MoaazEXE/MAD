@@ -4,6 +4,7 @@ import android.app.Application;
 import com.example.bytelift.data.settings.SettingsRepository;
 import com.example.bytelift.ui.workout.utils.DataManager;
 import com.example.bytelift.ui.workout.utils. FirebaseManager;
+import com.example.bytelift.utils.StreakManager;
 
 public class ByteLiftApplication extends Application {
 
@@ -20,5 +21,10 @@ public class ByteLiftApplication extends Application {
 
         // ✅ Initialize DataManager (loads routines from local cache + Firebase sync)
         DataManager.init(this);
+
+        // ✅ Initialize StreakManager (NEW)
+        StreakManager.init(this);
     }
+
+
 }

@@ -1,4 +1,4 @@
-package com.example.bytelift.ui.workout.models;
+package com.example.bytelift. ui.workout.models;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,8 +13,8 @@ public class Routine implements Serializable {
     public Map<String, List<Exercise>> days;
     public long createdAt;
     public long updatedAt;
-    public String notes;  // ← Add this field
+    public String notes;
+    public boolean isActiveForStreak = false;  // ✅ NEW FIELD
 
     public Routine() {}
-
 }

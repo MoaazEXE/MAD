@@ -55,7 +55,7 @@ public class PresetAdapter extends RecyclerView.Adapter<PresetAdapter.ViewHolder
             super(v);
             card = v.findViewById(R.id.card_routine);
             tvName = v. findViewById(R.id.tv_routine_name);
-            tvDays = v.findViewById(R. id.tv_days);
+            tvDays = v.findViewById(R.id.tv_days);
             tvType = v.findViewById(R.id.tv_type);
             btnEdit = v.findViewById(R.id.btn_edit);
             btnDelete = v.findViewById(R.id.btn_delete);
