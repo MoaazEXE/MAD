@@ -1,19 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Green accent colors -->
-    <color name="green_200">#81C784</color>
+
+    <!-- ============================= -->
+    <!-- Base Colors -->
+    <!-- ============================= -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#E53935</color>
+    <color name="destructive_red">#D32F2F</color>
+
+    <!-- ============================= -->
+    <!-- Material Default (Legacy) -->
+    <!-- ============================= -->
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+
+    <!-- ============================= -->
+    <!-- Green Accents -->
+    <!-- ============================= -->
+    <color name="green_200">#A5D6A7</color>
     <color name="green_500">#4CAF50</color>
     <color name="green_700">#388E3C</color>
 
-    <!-- Dark mode colors -->
+    <!-- ============================= -->
+    <!-- Light Mode (Settings + App) -->
+    <!-- ============================= -->
+    <color name="background_light">#FFFFFF</color>
+    <color name="card_background_light">#FFFFFF</color>
+    <color name="text_primary_light">#111111</color>
+    <color name="text_secondary_light">#757575</color>
+    <color name="light_gray">#E0E0E0</color>
+
+    <!-- ============================= -->
+    <!-- Dark Mode -->
+    <!-- ============================= -->
     <color name="dark_background">#121212</color>
     <color name="dark_surface">#1E1E1E</color>
-    <color name="dark_surface_variant">#2C2C2C</color>
-    <color name="dark_gray">#424242</color>
-    <color name="light_gray">#757575</color>
+    <color name="dark_surface_variant">#2A2A2A</color>
+    <color name="dark_gray">#333333</color>
 
-    <!-- Base colors -->
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="red">#F44336</color>
+    <!-- ============================= -->
+    <!-- Workout Module Specific -->
+    <!-- ============================= -->
+    <color name="gym_green">#22C55E</color>
+    <color name="bg_dark">#0B0F14</color>
+    <color name="card_dark">#121826</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_muted">#A0A7B4</color>
+    <color name="danger">#E53935</color>
+
+    <!-- ============================= -->
+    <!-- System / Misc -->
+    <!-- ============================= -->
+    <color name="ic_launcher_background">#FFFFFF</color>
+
 </resources>
