@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.bytelift.R;
-import com.example.bytelift.databinding.FragmentDietBinding;
+import com.example.bytelift.databinding.FragmentDietBinding;import android.widget.Button;
 
 public class DietFragment extends Fragment {
 

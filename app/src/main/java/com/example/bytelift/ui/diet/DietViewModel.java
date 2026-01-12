@@ -178,7 +178,6 @@ public class DietViewModel extends ViewModel {
 
         db.collection("users").document(userId).update(updates);
     }
-
     public LiveData<Integer> getDailyTarget() { return mDailyTarget; }
     public LiveData<Integer> getCaloriesEaten() { return mCaloriesEaten; }
     public LiveData<Integer> getProteinEaten() { return mProteinEaten; }
