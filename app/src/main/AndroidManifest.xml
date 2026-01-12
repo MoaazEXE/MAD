@@ -46,19 +46,54 @@
             android:exported="false"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
 
-        <!-- WORKOUT SYSTEM (correct package paths!) -->
+
+        <!-- WORKOUT SYSTEM (Arkana workout page) -->
         <activity
-            android:name="com.example.bytelift.ui.workout.WorkoutRoutineActivity"
+            android:name="com.example.bytelift.ui.workout.activities.WorkoutActivity"
             android:exported="false"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
 
         <activity
-            android:name="com.example.bytelift.ui.workout.DayWorkoutActivity"
+            android:name="com.example.bytelift.ui.workout.activities.SelectDaysActivity"
             android:exported="false"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
 
         <activity
-            android:name="com.example.bytelift.ui.workout.RoutineDetailsActivity"
+            android:name="com.example.bytelift.ui.workout.activities.AddExercisesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
+        <activity
+            android:name="com.example.bytelift.ui.workout.activities.ReviewRoutineActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
+        <activity
+            android:name="com.example.bytelift.ui.workout.activities.PresetsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
+        <activity
+            android:name="com.example.bytelift.ui.workout.activities.PresetDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
+        <activity
+            android:name="com.example.bytelift.ui.workout.activities.RoutineDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
+        <activity
+            android:name="com.example.bytelift.ui.workout.activities.ExerciseLibraryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+
+        <activity
+            android:name=".ui.settings_page.EditAccountActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.settings_page.ReminderScheduleActivity"
             android:exported="false"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
 
