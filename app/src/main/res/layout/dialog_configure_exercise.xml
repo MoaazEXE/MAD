@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/card_dark">
+
+    <!-- Sets x Reps Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="24dp">
+
+        <!-- Sets Picker -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sets"
+                android:textColor="@color/text_muted"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"/>
+
+            <NumberPicker
+                android:id="@+id/picker_sets"
+                android:layout_width="80dp"
+                android:layout_height="150dp"
+                android:theme="@style/NumberPickerTheme"/>
+
+        </LinearLayout>
+
+        <!-- "x" Label -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="×"
+            android:textColor="@color/text_white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="28dp"/>
+
+        <!-- Reps Picker -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reps"
+                android:textColor="@color/text_muted"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"/>
+
+            <NumberPicker
+                android:id="@+id/picker_reps"
+                android:layout_width="80dp"
+                android:layout_height="150dp"
+                android:theme="@style/NumberPickerTheme"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Weight Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight"
+            android:textColor="@color/text_muted"
+            android:textSize="12sp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/input_weight"
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:hint="Optional (kg)"
+            android:inputType="numberDecimal"
+            android:gravity="center"
+            android:textColor="@color/text_white"
+            android:textColorHint="@color/text_muted"
+            android:textSize="16sp"
+            android:background="@drawable/input_background"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

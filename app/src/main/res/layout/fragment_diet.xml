@@ -266,7 +266,7 @@
                             android:id="@+id/btnEditGoal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Edit"
+                            android:text="Set Target / Edit"
                             android:textColor="?attr/colorOnSurface"
                             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             app:strokeColor="?attr/colorOnSurface"
