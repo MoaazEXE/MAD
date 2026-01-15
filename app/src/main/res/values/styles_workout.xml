@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Used by dialog_configure_exercise.xml for NumberPicker widgets -->
+    <style name="NumberPickerTheme">
+        <!-- keep minimal so it works with any app theme -->
+    </style>
+
+</resources>

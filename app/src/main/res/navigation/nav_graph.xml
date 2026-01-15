@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.bytelift.ui.home.HomeFragment"
+        android:label="@string/menu_home" />
+
+    <fragment
+        android:id="@+id/nav_diet"
+        android:name="com.example.bytelift.ui.diet.DietFragment"
+        android:label="@string/menu_diet" />
+
+    <fragment
+        android:id="@+id/nav_leaderboard"
+        android:name="com.example.bytelift.ui.leaderboard.LeaderboardFragment"
+        android:label="@string/menu_leaderboard" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.bytelift.ui.settings_page.SettingsFragment"
+        android:label="@string/menu_settings" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.bytelift.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile" />
+
+    <fragment
+        android:id="@+id/nav_recipes"
+        android:name="com.example.bytelift.ui.diet.RecipesFragment"
+        android:label="Recipes" />
+
+
+</navigation>
