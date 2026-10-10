@@ -13,3 +13,14 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Local / IDE / secrets
+.idea/
+.gradle/
+app/build
+captures/
+google-services.json
+.claude/
+CLAUDE.md
+AGENTS.md
+.github/copilot-instructions.md
